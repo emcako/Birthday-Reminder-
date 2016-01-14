@@ -1,5 +1,6 @@
 package com.example.emcako.birthdayreminder;
 
+import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -10,6 +11,8 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.example.emcako.birthdayreminder.fragments.FriendsFragment;
+import com.example.emcako.birthdayreminder.fragments.ItemDetailFragment;
+import com.example.emcako.birthdayreminder.fragments.ItemListActivity;
 import com.example.emcako.birthdayreminder.fragments.LocationFragemnt;
 import com.example.emcako.birthdayreminder.fragments.MyAccountFragment;
 
@@ -23,6 +26,11 @@ public class MainActivity extends AppCompatActivity {
         ViewPager viewPager = (ViewPager) findViewById(R.id.vp_mainActivity);
         MainPageAdapter adapter = new MainPageAdapter(getSupportFragmentManager());
         viewPager.setAdapter(adapter);
+    }
+
+    public void GoThere(View view) {
+        Intent intent = new Intent(this, ItemListActivity.class);
+        startActivity(intent);
     }
 
     public class MainPageAdapter extends FragmentPagerAdapter{

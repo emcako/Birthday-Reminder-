@@ -16,6 +16,10 @@
         <activity
             android:name=".LoginActivity"
             android:label="@string/app_name">
+
+        </activity>
+        <activity android:name=".MainActivity">
+     <!--return the laucher in the login Activity-->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

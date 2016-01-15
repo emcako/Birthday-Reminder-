@@ -1,6 +1,10 @@
 package com.example.emcako.birthdayreminder;
 
+import android.app.DatePickerDialog;
+import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
+import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -9,6 +13,9 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.DatePicker;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.emcako.birthdayreminder.fragments.FriendsFragment;
 import com.example.emcako.birthdayreminder.fragments.ItemDetailFragment;
@@ -16,7 +23,12 @@ import com.example.emcako.birthdayreminder.fragments.ItemListActivity;
 import com.example.emcako.birthdayreminder.fragments.LocationFragemnt;
 import com.example.emcako.birthdayreminder.fragments.MyAccountFragment;
 
+import java.util.Calendar;
+
 public class MainActivity extends AppCompatActivity {
+
+    final Context context = this;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +38,8 @@ public class MainActivity extends AppCompatActivity {
         ViewPager viewPager = (ViewPager) findViewById(R.id.vp_mainActivity);
         MainPageAdapter adapter = new MainPageAdapter(getSupportFragmentManager());
         viewPager.setAdapter(adapter);
+
+
     }
 
     public void GoThere(View view) {
@@ -33,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public class MainPageAdapter extends FragmentPagerAdapter{
+    public class MainPageAdapter extends FragmentPagerAdapter {
 
 
         public MainPageAdapter(FragmentManager fm) {
@@ -42,13 +56,13 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public Fragment getItem(int position) {
-            switch (position){
+            switch (position) {
                 case 0:
                     return new MyAccountFragment();
                 case 1:
                     return new FriendsFragment();
                 case 2:
-                    return  new LocationFragemnt();
+                    return new LocationFragemnt();
                 default:
                     return null;
             }
@@ -58,5 +72,39 @@ public class MainActivity extends AppCompatActivity {
         public int getCount() {
             return 3;
         }
+    }
+
+    public static class DatePickerFragment extends DialogFragment
+            implements DatePickerDialog.OnDateSetListener {
+
+        @Override
+        public Dialog onCreateDialog(Bundle savedInstanceState) {
+            // Use the current date as the default date in the picker
+            final Calendar c = Calendar.getInstance();
+            int year = c.get(Calendar.YEAR);
+            int month = c.get(Calendar.MONTH);
+            int day = c.get(Calendar.DAY_OF_MONTH);
+
+            // Create a new instance of DatePickerDialog and return it
+            return new DatePickerDialog(getActivity(), this, year, month, day);
+        }
+
+        public void onDateSet(DatePicker view, int year, int month, int day) {
+            // Do something with the date chosen by the user
+            month += 1 ;
+            TextView textView = (TextView) getActivity().findViewById(R.id.BirthText);
+            if (month < 11){
+                textView.setText(day + "." +"0"+ month + "." + year);
+            } else {
+                textView.setText(day + "." + month + "." + year);
+            }
+
+
+        }
+    }
+
+    public void showDatePickerDialog(View v) {
+        DialogFragment newFragment = new DatePickerFragment();
+        newFragment.show(getSupportFragmentManager(), "datePicker");
     }
 }

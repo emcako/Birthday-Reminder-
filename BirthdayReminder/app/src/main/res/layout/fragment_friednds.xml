@@ -52,36 +52,32 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/editText2"
+        android:hint="Last Name"
         android:layout_below="@+id/editText"
-        android:layout_centerHorizontal="true"
-        android:hint="Last Name"/>
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
-    <EditText
+
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/editText3"
-        android:layout_below="@+id/editText2"
-        android:layout_centerHorizontal="true"
-        android:hint="Country"/>
+        android:text="Choose Date of Birth"
+        android:id="@+id/button3"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:onClick="showDatePickerDialog"/>
 
-    <EditText
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/editText4"
-        android:hint="City"
-        android:layout_below="@+id/editText3"
-        android:layout_alignLeft="@+id/textView2"
-        android:layout_alignStart="@+id/textView2" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="date"
-        android:ems="10"
-        android:id="@+id/editText5"
-        android:hint="Date of Birth"
-        android:layout_below="@+id/editText4"
-        android:layout_centerHorizontal="true" />
+        android:text="Date of Birth"
+        android:id="@+id/BirthText"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
 
 </RelativeLayout>

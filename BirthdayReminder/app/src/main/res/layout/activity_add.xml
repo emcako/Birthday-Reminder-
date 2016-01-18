@@ -1,0 +1,84 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".AddActivity">
+
+    <ImageView
+        android:id="@+id/iv_add_photo"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/android_300x300"
+        android:layout_margin="10dp"/>
+
+    <Button
+        style="@style/btn"
+        android:id="@+id/button_photo"
+        android:layout_width="150dp"
+        android:layout_gravity="center_horizontal"
+        android:onClick="showPicturePicker"
+        android:text="Choose Photo" />
+
+    <EditText
+        android:id="@+id/et_firstname"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:hint="First Name"
+        android:layout_margin="10dp"/>
+
+    <EditText
+        android:id="@+id/et_lastname"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:hint="Last Name"
+        android:layout_margin="10dp"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="10dp">
+
+        <EditText
+            android:id="@+id/et_birthday"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:hint="Birthday (DD.MM.YYYY)"
+            android:layout_alignParentBottom="true"
+            android:paddingTop="15dp"/>
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/calendar_button"
+            android:layout_alignParentBottom="true"
+            android:onClick="showDatePickerDialog"/>
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/et_giftideas"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:hint="Some ideas for gift.."
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="10dp"/>
+
+    <Button
+        style="@style/btn"
+        android:id="@+id/button2"
+        android:layout_width="300dp"
+        android:layout_marginTop="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
+        android:text="Add Friend"
+        android:onClick="AddFriendToDb"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

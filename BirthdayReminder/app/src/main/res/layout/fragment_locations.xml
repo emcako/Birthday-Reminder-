@@ -7,7 +7,34 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="LOCATION"
+        android:text="Looking for a gift?"
         android:id="@+id/textView3"
-        android:layout_gravity="center_horizontal" />
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="10dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:gravity="center_horizontal"
+        android:text="Maybe want to check for a store nearby.."
+        android:id="@+id/textView4"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="10dp"/>
+
+    <Button
+        style="@style/btn"
+        android:layout_width="200dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="CHECK OUT THE MAP"
+        android:id="@+id/buttonMap"
+        android:onClick="goToMaps"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="10dp"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/gifts_741x441"
+        android:layout_gravity="bottom"
+        android:baselineAlignBottom="true"/>
 </LinearLayout>

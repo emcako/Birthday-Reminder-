@@ -1,15 +1,136 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:contextClickable="false"
+    android:orientation="vertical"
+    android:layout_gravity="center_horizontal"
     android:weightSum="1">
 
     <TextView
-        android:layout_width="352dp"
-        android:layout_height="0dp"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="MY ACCOUNT"
-        android:id="@+id/textView"
-        android:layout_weight="0.33"
-        android:layout_gravity="bottom" />
+        android:id="@+id/textView14"
+        style="@style/TextView"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
+
+        android:text="MY ACCOUNT" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_below="@+id/textView14"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
+        android:maxHeight="300dp"
+        android:maxWidth="300dp"
+        android:src="@drawable/android_2_300x300" />
+
+    <Button
+        android:id="@+id/button_picture"
+        style="@style/btn"
+        android:layout_width="150dp"
+        android:layout_alignEnd="@+id/textView14"
+        android:layout_alignRight="@+id/textView14"
+        android:layout_below="@+id/imageView2"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="28dp"
+        android:onClick="GoToCamera"
+        android:text="Take Picture" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_firstname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="First Name : "
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <TextView
+            android:id="@+id/first_name"
+            style="@style/InfoTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Emiliyan"
+            android:textColor="#33CC33" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_lastname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Last Name : "
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <TextView
+            android:id="@+id/last_name"
+            style="@style/InfoTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nikolov"
+            android:textColor="#33CC33" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_birthday_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Date of Birth : "
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            />
+
+        <TextView style="@style/InfoTextView"
+            android:id="@+id/et_birthday_main"
+            android:layout_alignParentBottom="true"
+            android:text=" (DD.MM.YYYY) "
+            android:paddingTop="15dp"
+            android:textColor="#33CC33" />
+
+        <ImageButton
+            android:id="@+id/ib_myaccount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/calendar_button"
+            android:onClick="showDatePickerDialogMain" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_friends_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Friends : "
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <TextView style="@style/InfoTextView"
+            android:id="@+id/tv_friends_count_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="55"
+            android:textColor="#33CC33" />
+    </LinearLayout>
 </LinearLayout>
